@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<center> 
+    <div class="container"> 
+<form action="/auth/register" method="post" >
+    <h3>welcome to resgister form</h3>
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name"><br><br>
+    <label for="password">Password</label>
+    <input type="password" name="password"><br><br>
+    <button class="btn success">Sign up</button>
+    <a href="/">back to home</a> 
+    
+     
+</form>
+</div>
+</center>
+{% endblock %}
