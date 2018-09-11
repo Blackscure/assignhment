@@ -12,6 +12,10 @@ users = {}
 def home():
     return render_template('home.html')
 
+@app.route('/questions')
+def questions():
+    return render_template('questions.html')
+
 
 @app.route('/login')
 def login():
@@ -20,8 +24,16 @@ def login():
 
 @app.route('/auth/login', methods=['POST'])
 def login_template():
+    if request.method == 'POST':
+        name = request.form['name']
+        password = request.form['password']
 
-    return render_template('login.html')
+        for user in users:
+            current_user = users[user]
+            if name == current_user.name and password == current_user.password:
+                    
+
+                return redirect(url_for('question'))
 
 @app.route('/register')
 def register():
