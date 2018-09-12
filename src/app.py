@@ -1,12 +1,16 @@
 from flask import Flask,render_template, request,redirect, url_for
 
+from models.db import users
+
 from models.user import User
+
+ 
 
 
 
 app = Flask(__name__)
 
-users = {}
+
 
 @app.route('/')
 def home():
@@ -14,6 +18,7 @@ def home():
 
 @app.route('/questions')
 def questions():
+    # import pdb; pdb.set_trace()
     return render_template('questions.html')
 
 
@@ -29,11 +34,12 @@ def login_template():
         password = request.form['password']
 
         for user in users:
-            current_user = users[user]
-            if name == current_user.name and password == current_user.password:
-                    
-
-                return redirect(url_for('question'))
+            current_person = users[user]
+            if name == current_person.name and password == current_person.password:
+                # import pdb; pdb.set_trace()
+                return redirect(url_for('questions'))
+        
+        return redirect(url_for('login'))
 
 @app.route('/register')
 def register():
