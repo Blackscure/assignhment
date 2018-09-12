@@ -16,10 +16,21 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
-@app.route('/questions')
+@app.route('/questions', methods=['GET', 'POST'])
 def questions():
+    if request.method == 'GET':
+        return render_template('questions.html')
+    elif request.method == 'POST':
+        title = request.form['title'],
+        question = request.form['question'],
+        answer = request.form['answer'],
+
+        
     # import pdb; pdb.set_trace()
-    return render_template('questions.html')
+    return render_template('created.html', question=question)
+
+    
+     
 
 
 @app.route('/login')
@@ -32,6 +43,7 @@ def login_template():
     if request.method == 'POST':
         name = request.form['name']
         password = request.form['password']
+        
 
         for user in users:
             current_person = users[user]
