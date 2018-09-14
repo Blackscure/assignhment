@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+        .container{width: 1000px; height: 500px; padding: 15%; position: fixed;}
+       #ridge {border-style: ridge;width: 270px;}
+       a{text-decoration: none;color: dimgrey;font-family: fantasy;}
+       button{color: green;}
+       h2{font-family: cursive;}
+        
+    </style>
+    <center> 
+    <div class="container"> 
+        <div id="ridge"> 
+            <h2>Please crete anew quetion</h2>
+            <form method="post">
+                <div>
+                    <label for="title">Title</label>
+                    <input name="title" type="text"/>
+                </div>
+                <div>
+                    <label for="question">Question</label>
+                    <input name="question" type="text"/>
+                </div>
+                <div>
+                    <label for="answer">Answer</label>
+                    <input name="answer" type="text"/>
+                </div>
+                <div>
+                    <button type="submit">Submit question</button>
+                </div>
+            </form>
+    </div>
+    </div>
+</center>
+
+{% endblock %}

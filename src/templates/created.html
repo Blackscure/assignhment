@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>question successfully submitted</h1>
-<h2>Thank you for askin</h2>
+<style>
+    h2{font-size: 37px;font-family: 'Courier New', Courier, monospace;text-align: center;margin-top: 77px;}
+
+</style>
+<div container> 
+    
+    <h2>Thank you for askin</h2>
     <div>You asked: {{ question }}</div>
+</div>
 
 {% endblock %}
 

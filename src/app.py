@@ -16,21 +16,24 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
-@app.route('/questions', methods=['GET', 'POST'])
+@app.route('/createquestion', methods=['GET', 'POST'])
 def questions():
     if request.method == 'GET':
-        return render_template('questions.html')
+        return render_template('createquestion.html')
     elif request.method == 'POST':
         title = request.form['title'],
         question = request.form['question'],
         answer = request.form['answer'],
+        #print('------------>>>>>>>>>>', question[0])
 
         
     # import pdb; pdb.set_trace()
-    return render_template('created.html', question=question)
+    return render_template('created.html', question=question[0])
 
     
-     
+@app.route('/answers')
+def answers():
+    return render_template('answers.html')   
 
 
 @app.route('/login')
@@ -71,6 +74,26 @@ def register_template():
 
         new_person = User(name,password,id)
         return redirect(url_for('login'))
+
+@app.route('/question/<title>', methods=['GET', 'POST'])
+def question(title):
+    if request.method == 'GET':
+
+        question = "ask me"
+
+
+        return render_template("answers.html", question=question)
+    elif request.method == 'POST':
+        submittedanswer = request.form['submittedAnswer']
+
+
+        answer = "answer me"
+        if submittedanswer == answer:
+            return render_template('correct.html')
+        else:
+            return render_template('incorrect.html', submittedanswer = submittedanswer, answer = answer)
+    else:
+        return '<h1>Invalid request</h1>'
 
 
 
