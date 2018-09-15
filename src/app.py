@@ -74,26 +74,7 @@ def register_template():
 
         new_person = User(name,password,id)
         return redirect(url_for('login'))
-
-@app.route('/question/<title>', methods=['GET', 'POST'])
-def question(title):
-    if request.method == 'GET':
-
-        question = "ask me"
-
-
-        return render_template("answers.html", question=question)
-    elif request.method == 'POST':
-        submittedanswer = request.form['submittedAnswer']
-
-
-        answer = "answer me"
-        if submittedanswer == answer:
-            return render_template('correct.html')
-        else:
-            return render_template('incorrect.html', submittedanswer = submittedanswer, answer = answer)
-    else:
-        return '<h1>Invalid request</h1>'
+ 
 
 
 
