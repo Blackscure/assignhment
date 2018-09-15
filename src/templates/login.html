@@ -1,17 +1,26 @@
 {% block content %}
+<style>
+    .container{width: 1000px; height: 500px; padding: 15%; position: fixed;}
+   #ridge {border-style: ridge;width: 270px;}
+   a{text-decoration: none;color: dimgrey;font-family: fantasy;}
+   button{color: green;}
+   h3{font-family: cursive;}
+    
+</style>
+
 <center> 
     <div class="container"> 
-<form action="/auth/login" method="post" >
-    <h3>welcome to Login form</h3>
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name"><br><br>
-    <label for="password">Password</label>
-    <input type="password" name="password"><br><br>
-    <button class="btn success">Login</button>
-    <a href="/">back to home</a> 
-    
-     
-</form>
+        <div id="ridge"> 
+            <form action="/auth/login" method="post" >
+            <h3>welcome to Login form</h3>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name"><br><br>
+            <label for="password">Password</label>
+            <input type="password" name="password"><br><br>
+            <button class="btn success">Login</button>
+            <a href="/">back to home</a> 
+            </form>
+        </div>
 </div>
 </center>
 {% endblock %}

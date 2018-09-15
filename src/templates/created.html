@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+     .container{width: 1000px; height: 500px; padding: 50%;}
+    #ridge {border-style: ridge;width: 270px;color: rgb(22, 145, 18);}
+    a{text-decoration: none;color: dimgrey;font-family: fantasy;}
+    
+     
+
+</style>
+<center> 
+    <div container> 
+        <div id="ridge">
+        <h2>Thank you for askin</h2>
+        <div>You asked: {{ question }}</div><br>
+        <a href="/">back to home</a> <br><br>
+    </div>
+    </div>
+</center>
+
+{% endblock %}
+
+
+
+ 

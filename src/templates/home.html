@@ -1,24 +1,74 @@
 {% extends 'base.html' %}
 {% block content %}
 <style>
-    body{
-        background: lightblue;
-    }
-    #heading{background: aliceblue;font-size: 37px;}
-    p{font-family: fantasy;color: aqua}
-     
-     
-    a{text-decoration: none; color: gray;  font-family: fantasy;border-style: ridge;margin: 90px;bottom: 0;}
+
+    :root {
+    --primary: #ddd;
+    --dark: #333;
+    --light: #fff;
+    --shadow: 0 1px 5px rgba(109, 69, 69, 0.8);
+  }
+  body {
+    background: #ccc;
+    margin: 30px 50px;
+    line-height: 1.4;
+  }
+  
+
+
+    .wrapper {
+    display: grid;
+    grid-gap: 20px;
+    padding-top: 250px;
+  }
+  
+  /* Navigation */
+  .main-nav ul {
+    display: grid;
+    grid-gap: 20px;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .main-nav a {
+    background: var(--primary);
+    display: block;
+    text-decoration: none;
+    padding: 0.8rem;
+    text-align: center;
+    color: var(--dark);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    box-shadow: var(--shadow);
+  }
+  
+  .main-nav a:hover {
+    background: var(--dark);
+    color: var(--light);
+  }
+    
+    
 </style>
-<div id="heading">
-    <center> 
-     <p>Home page</p>
-    </center>
-</div>
-<center> 
-        
- 
- <a href="/register">click to go to register</a> 
+ <div class="wrapper">
+        <!-- Navigation -->
+        <nav class="main-nav">
+          <ul>
+            <li>
+              <a href="">Home</a>
+            </li>
+            <li>
+              <a href="register">Register</a>
+            </li>
+            <li>
+              <a href="login">login</a>
+            </li>
+            <li>
+              <a href='/createquestion'>CreatQuiz</a>
+            </li>
+          </ul>
+        </nav>
+   
 </center>
 
 

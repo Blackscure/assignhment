@@ -1,8 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<style>
+    .container{width: 1000px; height: 500px; padding: 15%; position: fixed;}
+    #ridge {border-style: ridge;width: 270px;color: red;}
+    a{text-decoration: none;color: dimgrey;font-family: fantasy;}
+    
      
-    <h3>Name used already takken</h3>
+
+</style>
+<center> 
+    <div class="container"> 
+        <div id="ridge">
+            <h3>Name used already takken</h3>
+            <a href="/">back to home</a> |
+            <a href="/register">register</a> 
+    </div>
+    </div>
+</center>
 
 
 {% endblock %}
