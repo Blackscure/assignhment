@@ -4,8 +4,6 @@ from models.db import users
 
 from models.user import User
 
- 
-
 
 
 app = Flask(__name__)
